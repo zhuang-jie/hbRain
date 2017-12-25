@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>红包雨插件</title>
+</head>
+<style>
+	*{ margin: 0; padding: 0; }
+	html,body{ height: 100%; }
+	body{ overflow-x: hidden; }
+	.banner{ display: block; position: relative; height: 100%; }
+	.banner>img{ width: 100%; height: 100%; display: block; }
+</style>
+<body>
+<div class="banner" id="banner"><img src="./img/bg.jpg" alt=""></div>
+<div id="petalbox"></div>
+
+<script src="./js/jquery-2.1.4.min.js"></script>
+<script src="./js/hbRain.js"></script>
+<script>
+$(function(){
+	var hb = $.hbRain({
+		el:'#petalbox',
+		hbImg: [
+			'./img/hb1.png',
+			'./img/hb2.png',
+			'./img/hb3.png',
+			'./img/hb4.png',
+			'./img/hb5.png'
+		],
+		hbWidth: 65,
+		number: 50
+	});
+	$('#banner').click(function(){
+		hb.open();
+	});
+});
+</script>
+</body>
+</html>
